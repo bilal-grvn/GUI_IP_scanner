@@ -120,8 +120,7 @@ class AnaPencere(QtWidgets.QMainWindow, Ui_MainWindow_IP_scan):
             hostname = socket.gethostname()
             ip_address = socket.gethostbyname(hostname)
             self.anapencere.lineEdit_host.setText(hostname)
-            #self.anapencere.lineEdit_myIP.setText(s.getsockname()[0])
-            self.anapencere.lineEdit_myIP.setText("192.168.2.***")
+            self.anapencere.lineEdit_myIP.setText(s.getsockname()[0])
             """
             print("IP Address: ", s.getsockname()[0])
             print(f"Hostname: {hostname}")
