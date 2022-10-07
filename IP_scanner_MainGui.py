@@ -26,7 +26,6 @@ class AnaPencere(QtWidgets.QMainWindow, Ui_MainWindow_IP_scan):
             self.anapencere.radioButton_ubuntu.toggled.connect(self.os_select)
             self.anapencere.radioButton_window.toggled.connect(self.os_select)
 
-
     def exit_ap(self):
         try:
             self.close()
@@ -47,7 +46,6 @@ class AnaPencere(QtWidgets.QMainWindow, Ui_MainWindow_IP_scan):
                     self.window = True
                 else:
                     self.window = False
-
         except Exception as e:
             print("os_select ERROR", "")
         pass

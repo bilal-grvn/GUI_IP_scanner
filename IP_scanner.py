@@ -6,9 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_MainWindow_IP_scan(object):
     def setupUi(self, MainWindow_IP_scan):
