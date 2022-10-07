@@ -1,8 +1,9 @@
-# Active IP listing with GUI 💻
-
-#### By Bilal GÜREVİN
+# -----------------------------------------------------------------------------
+# 🚀Python based active IP listing with GUI 💻
+# -----------------------------------------------------------------------------
+`By Bilal GÜREVİN`
 
 
 |        IP SCANNER      |
 |:-------------------------------:|
-| ![alt text](img/ıp_scan.gif?raw=true) |
+| ![alt text](img/IP-scan.gif?raw=true) |
