@@ -1,2 +1,8 @@
-# GUI_IP_scanner
-GUI ile aktif IP listeleme
+# Active IP listing with GUI 💻
+
+#### By Bilal GÜREVİN
+
+
+|        IP SCANNER      |
+|:-------------------------------:|
+| ![alt text](img/ıp_scan.gif?raw=true) |
