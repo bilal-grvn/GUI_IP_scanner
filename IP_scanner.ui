@@ -292,7 +292,7 @@ color: #FFFFFF;
        <item row="3" column="0" colspan="5">
         <widget class="QRadioButton" name="radioButton_window">
          <property name="text">
-          <string>For WINDOW</string>
+          <string>For WINDOWS</string>
          </property>
         </widget>
        </item>
@@ -449,10 +449,10 @@ background-color: rgb(164, 0, 0);
 color: #FFFFFF;</string>
     </property>
     <property name="text">
-     <string>@ By Bilal GUREVIN   </string>
+     <string/>
     </property>
     <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
   </widget>

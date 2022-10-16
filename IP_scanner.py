@@ -6,7 +6,9 @@
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow_IP_scan(object):
     def setupUi(self, MainWindow_IP_scan):
@@ -181,7 +183,8 @@ class Ui_MainWindow_IP_scan(object):
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("background-color: rgb(93, 93, 154);\n"
 "color: #FFFFFF;")
-        self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_2.setText("")
+        self.label_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_2.setObjectName("label_2")
         MainWindow_IP_scan.setCentralWidget(self.centralwidget)
 
@@ -197,12 +200,11 @@ class Ui_MainWindow_IP_scan(object):
         self.label.setText(_translate("MainWindow_IP_scan", "Total IP"))
         self.label_5.setText(_translate("MainWindow_IP_scan", "<html><head/><body><p align=\"justify\">Search</p></body></html>"))
         self.label_3.setText(_translate("MainWindow_IP_scan", "<html><head/><body><p align=\"justify\">My IP</p></body></html>"))
-        self.radioButton_window.setText(_translate("MainWindow_IP_scan", "For WINDOW"))
+        self.radioButton_window.setText(_translate("MainWindow_IP_scan", "For WINDOWS"))
         self.radioButton_ubuntu.setText(_translate("MainWindow_IP_scan", "For UBUNTU"))
         self.lineEdit_no_4.setText(_translate("MainWindow_IP_scan", "0"))
         self.pushButton_scan.setText(_translate("MainWindow_IP_scan", "SCAN"))
         self.pushButton_exit.setText(_translate("MainWindow_IP_scan", "EXIT"))
-        self.label_2.setText(_translate("MainWindow_IP_scan", "@ By Bilal GUREVIN   "))
 
 
 if __name__ == "__main__":

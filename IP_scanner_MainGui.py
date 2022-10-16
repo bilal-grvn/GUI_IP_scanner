@@ -53,18 +53,16 @@ class AnaPencere(QtWidgets.QMainWindow, Ui_MainWindow_IP_scan):
     def IP_listing(self):
         try:
             self.hostname()
+
             if self.ubuntu:
                 devnull = open(os.devnull, 'wb')
                 no_1 = self.anapencere.lineEdit_no_1.text()
                 no_2 = self.anapencere.lineEdit_no_2.text()
                 no_3 = self.anapencere.lineEdit_no_3.text()
-
-                #ip_araligi_deger = ("192.168."+no_1)
                 ip_araligi_deger = (no_1 +"."+ no_2 +"."+ no_3)
 
                 if no_1 == "" or no_2 == "" or no_3 == "":
                     uyari_1 = "missing IP"
-                    print(uyari_1)
                     self.anapencere.lineEdit_uyari.setText(uyari_1)
                 else:
                     list = []
@@ -91,6 +89,8 @@ class AnaPencere(QtWidgets.QMainWindow, Ui_MainWindow_IP_scan):
                     ip_sayisi=len(list)
                     row = 0
                     self.anapencere.lineEdit_total_IP.setText(str(ip_sayisi))
+                    self.anapencere.tableWidget_IP_list.setColumnWidth(0, 250)
+                    self.anapencere.tableWidget_IP_list.setColumnWidth(1, 60)
                     self.anapencere.tableWidget_IP_list.setRowCount(ip_sayisi)
                     self.anapencere.lineEdit_uyari.setText(str(ip_sayisi) + " IP active")
                     for i in range (ip_sayisi):
@@ -98,14 +98,41 @@ class AnaPencere(QtWidgets.QMainWindow, Ui_MainWindow_IP_scan):
                         row=row+1
 
             elif self.window:
-                uyari_2 = "not active yet"
-                print(uyari_2)
-                self.anapencere.lineEdit_uyari.setText(uyari_2)
+                list = []
+                no_1 = self.anapencere.lineEdit_no_1.text()
+                no_2 = self.anapencere.lineEdit_no_2.text()
+                no_3 = self.anapencere.lineEdit_no_3.text()
+                ip_araligi_deger = (no_1 + "." + no_2 + "." + no_3 + ".")
+                st1 = int(0)
+                en1 = int(255)
+                en1 = en1 + 1
+                if no_1 == "" or no_2 == "" or no_3 == "":
+                    uyari_2 = "missing IP"
+                    self.anapencere.lineEdit_uyari.setText(uyari_2)
+                else:
+                    for ip in range(st1, en1):
+                        addr = ip_araligi_deger + str(ip)
+                        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        socket.setdefaulttimeout(1)
+                        result = s.connect_ex((addr, 135))
+                        if (result == 0):
+                            list.append(addr)
+                    ip_sayisi = len(list)
+                    row = 0
+                    self.anapencere.lineEdit_total_IP.setText(str(ip_sayisi))
+                    self.anapencere.tableWidget_IP_list.setColumnWidth(0, 250)
+                    self.anapencere.tableWidget_IP_list.setColumnWidth(1, 60)
+                    self.anapencere.tableWidget_IP_list.setRowCount(ip_sayisi)
+                    self.anapencere.lineEdit_uyari.setText(str(ip_sayisi) + " IP active")
+                    for i in range (ip_sayisi):
+                        self.anapencere.tableWidget_IP_list.setItem(row, 0, QtWidgets.QTableWidgetItem((str(list[i]))))
+                        row=row+1
 
             else:
                 uyari_3 = "select OS"
                 print(uyari_3)
                 self.anapencere.lineEdit_uyari.setText(uyari_3)
+
 
         except Exception as e:
             self.log_yaz("IP_listing ERROR", str(e))
